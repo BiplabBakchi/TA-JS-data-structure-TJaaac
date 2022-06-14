@@ -24,19 +24,21 @@ Answer the following with reason after going through the above code:
 2. What's will be the value of `person1` and `person2` ? Explain with reason. Draw the memory representation diagram.
 
 <!-- To add this image here use ![name](./hello.jpg) -->
-
+![name](./hello.jpg)
 ```js
 function personDetails(person) {
   person.age = 25;
   person = { name: 'John', age: 50 };
   return person;
 }
-var person1 = { name: 'Alex', age: 30 };
+var person1 = { name: 'Alex', age: 30 };h
 var person2 = personDetails(person1);
-console.log(person1);
-console.log(person2);
+console.log(person1);// {name: 'Alex', age: 25}
+console.log(person2); // {name: 'John', age: 50}
 ```
-
+Value of person1 before calling function is  name: 'Alex', age: 30
+after calling function name: 'Alex', age: 25 Value of age is updated in the function so it is changed from 30 to 25 
+value of person2 after calling the function is name: 'John', age: 50 because the person is reassigned values and the reassigned value is returned.
 3. What will be the output of the below code:
 
 ```js
