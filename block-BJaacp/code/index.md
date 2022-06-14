@@ -11,16 +11,16 @@ let arr2 = arr;
 
 Answer the following with reason after going through the above code:
 
-- `[10] === [10]`
+- `[10] === [10]`// false Both have different addresss
 - What is the value of obj? // answer
-- `obj == newObj`
-- `obj === newObj`
-- `user === newObj`
-- `user == newObj`
-- `user == obj`
-- `arr == arr2`
-- `arr === arr2`
-
+- `obj == newObj`// false Both have different address
+- `obj === newObj`// false new obj in non primitive and  obj is primitive
+- `user === newObj`// false new obj in non primitive and  user is primitive
+- `user == newObj` false new obj in non primitive and  user is primitive data type
+- `user == obj`True they don't have any value and both are primitive
+- `arr == arr2`True they have the same address to access the value
+- `arr === arr2` True they have the same address to access the value
+  ,
 2. What's will be the value of `person1` and `person2` ? Explain with reason. Draw the memory representation diagram.
 
 <!-- To add this image here use ![name](./hello.jpg) -->
@@ -46,6 +46,6 @@ var user = {
 };
 user.brothers = brothers;
 brothers.push('Robb');
-console.log(user.brothers === brothers); //1. output
-console.log(user.brothers.length === brothers.length); //2. output
+console.log(user.brothers === brothers); //1.output //true
+console.log(user.brothers.length === brothers.length); //2. output //true
 ```
