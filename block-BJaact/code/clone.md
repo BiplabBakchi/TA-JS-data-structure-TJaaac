@@ -10,12 +10,12 @@ let person2 = person;
 
 person.firstName = 'Arya';
 
-console.log(person2.firstName); // output
-console.log(person.firstName); // output
-console.log(person.lastName); // output
-console.log(person == person2); // output
-console.log(person === person2); // output
-console.log(person.lastName === person2.lastName); // output
+console.log(person2.firstName); // output 'Arya' because they both have same address, value was copied by reference. 
+console.log(person.firstName); // output 'Arya' value  was changed so we get the updated value.It is a non- primitive data type
+console.log(person.lastName); // output 'Doe' It is a non- primitive data type so access the value by copy by reference.
+console.log(person == person2); // output true Both have same address
+console.log(person === person2); // output true Both have same address
+console.log(person.lastName === person2.lastName); // output output true Both have same address
 ```
 
 2. Write the output with reason:
@@ -37,17 +37,17 @@ let personTwo = { ...person };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // output 'John' person was cloned to personTwo 
+console.log(person.firstName); // output 'Arya' value was changed.
+console.log(personTwo.lastName); // output 'Doe'
+console.log(person.firstName === personTwo.firstName); // output false both have different address
+console.log(person == personTwo); // output false both have different address 
+console.log(person === personTwo); // output false both have different address
+console.log(person.address === personTwo.address); // output true they share the same address for address because spread operator does shallow cloning.
+console.log(person.address == personTwo.address); // output true they share the same address for address because spread operator does shallow cloning.
+console.log(personTwo.address.city); // output 'San Jose' it is the value of key city 
+console.log(person.address.city); // output 'San Jose' it is the value of key city because value of city  remainded unchanged
+console.log(person.address.city == personTwo.address.city); // output true they share the same address for address because spread operator does shallow cloning.
 ```
 
 3. Write the output with reason:
@@ -105,7 +105,9 @@ let blogs = [
 
 // Your code goes here
 ```
-
+```js
+let clonedBlogs = [...blogs];
+```
 5. Clone the `question` variable into a new variable named `questionClone`
 
 ```js
@@ -129,6 +131,9 @@ var questions = [
 ];
 
 // Your code goes here
+```
+```js
+let questionClone = [...questions];
 ```
 
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
@@ -156,6 +161,9 @@ var allBlogs = {
 };
 
 // Your code goes here
+```
+```js
+let allBlogsClone = {...allBlogs };
 ```
 
 7. Clone the `person` variable into a new variable named `clonedPerson`
@@ -190,12 +198,16 @@ let person = [
 
 // Your code goes here
 ```
+```js
+let clonedPerson = [...person];
+```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
 
 ```js
-function cloneObject() {
+function cloneObject(input) {
   // your code
+  return {...input};
 }
 
 // Run the test below to check your function
